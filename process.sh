@@ -23,4 +23,7 @@ done
 ref_count=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 $ref_id.mp4)
 cd ..
 touch clips.txt
+mkdir -p data/warp/clips
+mkdir -p data/warp/f1
+mkdir -p data/warp/f2
 python main.py $ref_id.mp4 $warp_id.mp4 $ref_count
